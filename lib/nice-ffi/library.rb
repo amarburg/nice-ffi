@@ -81,8 +81,8 @@ module NiceFFI::Library
         self.module_eval {
           ffi_lib path
         }
-      rescue LoadError
-        puts "From ffi_lib: #{p.inspect}"
+      rescue LoadError => ex
+        puts "From ffi_lib: #{ex.inspect}"
         false
       else
         true
