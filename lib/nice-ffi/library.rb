@@ -81,6 +81,7 @@ module NiceFFI::Library
           ffi_lib path
         }
       rescue LoadError
+        puts "From ffi_lib: #{p.inspect}"
         false
       else
         true
