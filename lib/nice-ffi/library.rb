@@ -82,7 +82,7 @@ module NiceFFI::Library
           ffi_lib path
         }
       rescue LoadError => ex
-        puts "From ffi_lib: #{ex.inspect}"
+        puts "From ffi_lib on #{path}: #{ex.message}"
         false
       else
         true
