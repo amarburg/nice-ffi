@@ -74,7 +74,7 @@ module NiceFFI::Library
     # Try just the plain library name(s), as last resort.
     paths += names
 
-    puts "Trying #{paths.join(',')}"
+    #puts "Trying #{paths.join(',')}"
     # Try loading each path until one works.
     loaded = paths.find { |path| 
       begin
