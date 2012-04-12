@@ -328,7 +328,7 @@ class NiceFFI::Struct < FFI::Struct
   # (Note: FFI::MemoryPointer and FFI::Buffer have built-in memory
   # management, so MyClass.release is never called for them.)
   # 
-  def initialize( val, options={} )
+  def initialize( val = nil, options={} )
     # Stores certain kinds of member values so that we don't need
     # to create a new object every time they are read.
     @member_cache = {}
@@ -336,6 +336,8 @@ class NiceFFI::Struct < FFI::Struct
     options = {:autorelease => true}.merge!( options )
 
     case val
+    when nil
+      super()
 
     when Hash
       super(FFI::Buffer.new(size))
